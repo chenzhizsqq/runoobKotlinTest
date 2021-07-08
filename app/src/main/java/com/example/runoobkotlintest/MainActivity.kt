@@ -7,6 +7,16 @@ import android.widget.Button
 import kotlin.reflect.KProperty
 import kotlin.properties.Delegates
 
+class Greeter(val name: String) {
+    fun greet() {
+        println("Hello, $name")
+    }
+}
+
+fun 创建一个对象_不用new关键字() {
+    Greeter("World!").greet()          // 创建一个对象不用 new 关键字
+}
+
 fun lambda_匿名函数() {
     val sumLambda: (Int, Int) -> Int = {x,y -> x+y}
     println(sumLambda(1,2))  // 输出 3
@@ -730,7 +740,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             //R.id.TestButton -> Log.e("ok","ok")
-            R.id.TestButton -> 把属性储存在映射中var属性()
+            R.id.TestButton -> 创建一个对象_不用new关键字()
         }
     }
 }
